@@ -118,7 +118,7 @@ def get_args_parser():
 
 def convert_json_to_jsonl(input_pattern, output_file):
     with open(output_file, 'w') as outfile:
-        for filename in tqdm.tqdm(glob.glob(input_pattern)):
+        for filename in tqdm(glob.glob(input_pattern)):
             with open(filename, 'r') as infile:
                 data = json.load(infile)
                 for item in data:
